@@ -4,7 +4,7 @@ env:
   AZURE_CONTAINER_REGISTRY_NAME: "captainborisdemoacr"  # set this to the name of your Azure Container Registry
   AZURE_CONTAINER_REGISTRY: "captainborisdemoacr.azurecr.io"
   CONTAINER_NAME: "hello-world"
-  RESOURCE_GROUP: "cicd-resource-rg"
+  RESOURCE_GROUP: "githuba-actions-rg"
   CLUSTER_NAME: "captianboris-cicd-aks"
   DEPLOYMENT_MANIFEST_PATH: "kubernetes"
 
@@ -45,12 +45,12 @@ jobs:
     permissions: 
       actions: read
       contents: read
-      id-token: read
-  
+      id-token: write
+
     runs-on: ubuntu-latest
-    environment: Production
+    environment: production
     needs: [buildImage]
-  
+
     steps:
       - uses: actions/checkout@v3
       
@@ -62,7 +62,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           
       - name: Setup kubelogin
-        uses: Azure/use-kubelogin@v1.1
+        uses: Azure/use-kubelogin@v1.2
         with:
           kubelogin-version: 'v0.0.25'
   
@@ -100,45 +100,4 @@ jobs:
             ${{ env.DEPLOYMENT_MANIFEST_PATH }}/hello-world-service.yaml
           images: |
             ${{ env.AZURE_CONTAINER_REGISTRY }}/${{ env.CONTAINER_NAME }}:${{ github.sha }}
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
           
