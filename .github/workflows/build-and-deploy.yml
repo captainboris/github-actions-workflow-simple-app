@@ -42,13 +42,14 @@ jobs:
           file: ./Dockerfile
 
   deploy: 
+    runs-on: ubuntu-latest
     permissions: 
       actions: read
       contents: read
       id-token: write
 
-    runs-on: ubuntu-latest
-    # environment: Dev/test
+
+    environment: Production
     needs: [buildImage]
 
     steps:
