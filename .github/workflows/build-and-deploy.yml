@@ -90,11 +90,11 @@ jobs:
           # File to write result to
           output: 
             hello-world-deployment.yaml
-            
+
               
  
       - name: Deploy to Kubernetes cluster
-        uses: Azure/k8s-deploy@v4.9
+        uses: Azure/k8s-deploy@v4
         with:
           action: deploy
           manifests: |
