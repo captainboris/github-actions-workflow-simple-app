@@ -102,4 +102,5 @@ jobs:
             ${{ env.DEPLOYMENT_MANIFEST_PATH }}/hello-world-service.yaml
           images: |
             ${{ env.AZURE_CONTAINER_REGISTRY }}/${{ env.CONTAINER_NAME }}:${{ github.sha }}
+            
           
