@@ -5,7 +5,7 @@ env:
   AZURE_CONTAINER_REGISTRY: "captainborisdemoacr.azurecr.io"
   CONTAINER_NAME: "hello-world"
   RESOURCE_GROUP: "githuba-actions-rg"
-  CLUSTER_NAME: "captianboris-cicd-aks"
+  CLUSTER_NAME: "captainboris-cicd-aks"
   DEPLOYMENT_MANIFEST_PATH: "kubernetes"
 
 on:
