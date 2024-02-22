@@ -4,7 +4,7 @@ env:
   AZURE_CONTAINER_REGISTRY_NAME: "captainborisdemoacr"  # set this to the name of your Azure Container Registry
   AZURE_CONTAINER_REGISTRY: "captainborisdemoacr.azurecr.io"
   CONTAINER_NAME: "hello-world"
-  RESOURCE_GROUP: "githuba-actions-rg"
+  RESOURCE_GROUP: "github-actions-rg"
   CLUSTER_NAME: "captainboris-cicd-aks"
   DEPLOYMENT_MANIFEST_PATH: "kubernetes"
 
